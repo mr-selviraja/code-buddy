@@ -1,0 +1,162 @@
+.container {
+  padding: 0 5vw;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.header {
+  padding: calc(2.5rem + 2vw) 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo-container {
+  display: flex;
+  align-items: center;
+}
+.header .logo-container:hover {
+  animation: lub-dub 0.3s 2;
+}
+.header__logo {
+  width: 5rem;
+}
+.header #btn-nav-toggle {
+  border: none;
+  background: none;
+  z-index: 10;
+}
+.header #btn-nav-toggle:hover {
+  cursor: pointer;
+}
+.header #btn-nav-toggle:hover .bar {
+  background-color: #a6a6ff;
+}
+.header #btn-nav-toggle .bar {
+  display: block;
+  height: 0.2rem;
+  background: #8c8cff;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease-in-out;
+}
+.header #btn-nav-toggle .bar:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.header #btn-nav-toggle .bar:nth-child(1) {
+  width: 3rem;
+}
+.header #btn-nav-toggle .bar:nth-child(2) {
+  width: 2rem;
+  transform: translateX(1rem);
+}
+.header #btn-nav-toggle .bar:nth-child(3) {
+  width: 1rem;
+  transform: translateX(2rem);
+}
+.header #btn-nav-toggle.active .bar:nth-child(2) {
+  transform: translateX(0);
+}
+.header #btn-nav-toggle.active .bar:nth-child(3) {
+  transform: translateX(0);
+}
+.header__nav {
+  background-color: #404040;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  padding: calc(2.5rem + 2vw) 5vw;
+  width: 50%;
+  min-width: 22rem;
+  height: 100vh;
+  box-shadow: 0 0 0.75rem #191919;
+  transition: all 0.5s ease-in-out;
+}
+.header__nav .text-nav-menu {
+  color: #f2f2f2;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  width: 80%;
+  border-bottom: 0.1rem solid #ababab;
+}
+.header__nav--link {
+  color: #8c8cff;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: block;
+  padding: 1rem 0;
+}
+.header__nav--link:hover {
+  color: #a6a6ff;
+}
+.header__nav.active {
+  right: 0;
+}
+
+@keyframes lub-dub {
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    padding: calc(1.5rem + 2.5vw) 5vw;
+  }
+  .header #btn-nav-toggle {
+    display: none;
+  }
+  .header .text-nav-menu {
+    display: none;
+  }
+  .header__nav {
+    position: static;
+    background-color: #e5e5ff;
+    height: auto;
+    padding: 0;
+    box-shadow: none;
+    width: auto;
+    min-width: auto;
+    transition: none;
+  }
+  .header__nav ul {
+    display: flex;
+    gap: 7.5rem;
+  }
+  .header__nav--link {
+    display: inline;
+    padding: 0;
+  }
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background-color: #e5e5ff;
+  color: #191919;
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
